@@ -6,5 +6,7 @@
 <body>
 <h2><a href="index.html">Home</a></h2>
 <h2>User list</h2>
+/**TODO clean this*/
+<p>${requestScope.testT}</p>
 </body>
 </html>
