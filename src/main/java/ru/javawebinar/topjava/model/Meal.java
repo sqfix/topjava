@@ -1,7 +1,6 @@
 package ru.javawebinar.topjava.model;
 
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -10,11 +9,17 @@ import java.time.LocalTime;
  * GKislin
  * 11.01.2015.
  */
+@Entity
+@Table(name = "meals")
 public class Meal extends BaseEntity {
+
+    @Column(name = "dateTime")
     private LocalDateTime dateTime;
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "calories")
     private int calories;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -77,7 +82,6 @@ public class Meal extends BaseEntity {
     @Override
     public String toString() {
         return "Meal{" +
-                "id=" + id +
                 ", dateTime=" + dateTime +
                 ", description='" + description + '\'' +
                 ", calories=" + calories +
